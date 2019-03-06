@@ -3,7 +3,9 @@
 
 ### Script: hgnc_symbol_checker.R #############################################################################################
 ### Purpose: check gene symbols and retrieve hgnc id ##########################################################################
-### requires hgnc gene file: "gene_with_protein_product.txt" ##################################################################
+### requires gene file: "gene_with_protein_product.txt" and gene symbols: vector of gene symbols to check #####################
+### output: gene symbol provided, corresponding hgnc id ("-" , if no hgnc id was found), mapping type #########################
+### (this function only returns hgnc ids for protein coding genes / input file could be modified) #############################
 ### Author: Pilar Cacheiro ####################################################################################################
 ### Date: 03/12/2018 ##########################################################################################################
 
@@ -13,7 +15,7 @@
 
 hgnc.checker <- function(gene.symbols,gene.file){
   
-  library(tidyr); library(data.table)
+  library(tidyr); library(dplyr); library(data.table)
   
   check.approved <- function(input.genes,database) {
     
