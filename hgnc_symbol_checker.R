@@ -1,14 +1,12 @@
 ###############################################################################################################################
 ###############################################################################################################################
-
-### Script: hgnc_symbol_checker.R #############################################################################################
-### Purpose: check gene symbols and retrieve hgnc id ##########################################################################
-### requires gene file: "gene_with_protein_product.txt" and gene symbols: vector of gene symbols to check #####################
-### output: gene symbol provided, corresponding hgnc id ("-" , if no hgnc id was found), mapping type #########################
-### (this function only returns hgnc ids for protein coding genes / input file could be modified) #############################
-### Author: Pilar Cacheiro ####################################################################################################
-### Date: 03/12/2018 ##########################################################################################################
-
+### Script: hgnc_symbol_checker.R 
+### Purpose: check gene symbols and retrieve hgnc id 
+### Description: this function returns hgnc ids for protein coding genes symbols / (only protein coding genes /input file could 
+### be modified)
+### Input: "gene_with_protein_product.txt" (see README) file and a vector of gene symbols to check 
+### Output: dataframe with 3 columns: "HGNC.ID":corresponding hgnc id ("-" , if no hgnc id was found): "Gene.Symbol": gene 
+### symbol provided; "Type": mapping type (Approved.Symbol,Synonym.Symbol,Notfound.ProteinCoding.Symbol,...) 
 ###############################################################################################################################
 ###############################################################################################################################
 
